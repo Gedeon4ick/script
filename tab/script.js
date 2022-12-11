@@ -2,12 +2,11 @@ window.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.tab__link');
     const tabContent = document.querySelectorAll('.content__tab');
     const tabParent = document.querySelector('.tabs');
-    console.log(tabParent);
 
     function hideTabContent() {
         tabContent.forEach(item => {
             item.classList.add('hide');
-            item.classList.remove('show');
+            item.classList.remove('show','fade');
         });
         tabs.forEach(item => {
             item.classList.remove('active');
@@ -16,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function showTabContent(i = 0) {
         tabContent[i].classList.remove('hide');
-        tabContent[i].classList.add('show');
+        tabContent[i].classList.add('show', 'fade');
         tabs[i].classList.add('active');
     };
 
